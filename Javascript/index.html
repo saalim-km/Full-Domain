@@ -4,16 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        body {
+            height: 1000vh;
+        }
+        #field {
+          width: 300px;
+          height: 150px;
+          border: 10px solid black;
+          background-color: #00FF00;
+          overflow: hidden;
+          cursor: pointer;
+        }
+        #ball {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: 1s all;
+        }
+      </style>
 </head>
 <body>
-    <input type="checkbox" id="check">
-    <button onclick="handleClick()">click </button>
+    <div onclick="alert('this is div')">
+        <button onclick="event.stopImmediatePropagation()">click me</button>
+    </div>
 </body>
 
 <script>
-    const input = document.getElementById('check');
-    function handleClick(){
-        input.checked ? input.checked = false : input.checked = true;
-    }
+
 </script>
 </html>

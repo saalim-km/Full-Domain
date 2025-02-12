@@ -93,3 +93,39 @@
 //     return max;
 // }
 // console.log(findMax([1,2,3,4,1000]))
+
+
+
+// ? promise combinators
+// Promise.all([
+//     Promise.resolve("1 completed"),
+//     Promise.resolve("2 completed"),
+//     Promise.reject("3 rejected")
+// ])
+// .then((data)=> console.log(data))
+// .catch((error)=> console.log(error));
+
+// Promise.allSettled([
+//     Promise.resolve("taks 1 completed"),
+//     Promise.reject("task 2 incomplete"),
+//     Promise.resolve("task 3 complete")
+// ]).then((data)=> console.log(data))
+// .catch((err)=> console.log(err))
+
+
+// Promise.race([
+//     new Promise((resolve)=>
+//         setTimeout(()=> resolve("task 1 completed"),300)
+//     ),
+//     new Promise((res, rej)=> 
+//         setTimeout(()=>rej("taask 2 incomplete"),500)
+//     )
+// ]).then((data)=> console.log(data))
+// .catch((err)=> console.log(err))
+
+Promise.any([
+    Promise.reject("task 1 complete"),
+    Promise.reject("task 2 incomplete")
+])
+.then((data)=> console.log(data))
+.catch((err)=> console.log(err))
