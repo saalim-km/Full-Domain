@@ -1,30 +1,29 @@
-import express from "express";
+const express = require("express")
+
 const app = express();
 
+app.use((express.urlencoded({extended : true})))
 
-app.get("/divide/:num1/:num2",(req,res)=> {
-    console.log(req)
-    const {num1 , num2} = req.params;
-    const dividend = parseFloat(num1)
-    const divisor = parseFloat(num2)
+app.get("/",(req,res)=> {
+    res.send("welcome")
+})
 
-    res.json({result : dividend / divisor });
-});
+app.get("/user",(req,res)=> {
+    res.send(
+        `
+    <form action="/value" method="post">
 
+    <input name = "data" type = "text"/>
+    <button type="submit">submit</button>
+    </form>
+    `
+    )
+})
 
-
-app.get("/divide",(req,res)=> {
-    const {num1 , num2} = req.query;
-    const divident = parseFloat(num1);
-    const divisor = parseFloat(num2);
-
-    if(divisor == 0) {
-        return res.json({error : "the divisor should be a valid number !!"});
-    }
-
-    res.json({result : divident / divisor});
+app.post("/value",(req,res)=> {
+    console.log(req.body);
 })
 
 app.listen(3000,()=> {
-    console.log("server run aayi 3000 !!")
+    console.log("started")
 })
