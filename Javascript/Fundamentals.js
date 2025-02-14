@@ -98,24 +98,24 @@
 
 // ? promise combinators
 // Promise.all([
-//     Promise.resolve("1 completed"),
-//     Promise.resolve("2 completed"),
+//     Promise.reject("1 completed"),
+//     Promise.reject("2 completed"),
 //     Promise.reject("3 rejected")
 // ])
 // .then((data)=> console.log(data))
 // .catch((error)=> console.log(error));
 
 // Promise.allSettled([
-//     Promise.resolve("taks 1 completed"),
+//     Promise.reject("taks 1 completed"),
 //     Promise.reject("task 2 incomplete"),
-//     Promise.resolve("task 3 complete")
+//     Promise.reject("task 3 complete")
 // ]).then((data)=> console.log(data))
 // .catch((err)=> console.log(err))
 
 
 // Promise.race([
-//     new Promise((resolve)=>
-//         setTimeout(()=> resolve("task 1 completed"),300)
+//     new Promise((resolve,rej)=>
+//         setTimeout(()=> rej("task 1 completed"),300)
 //     ),
 //     new Promise((res, rej)=> 
 //         setTimeout(()=>rej("taask 2 incomplete"),500)
@@ -123,9 +123,26 @@
 // ]).then((data)=> console.log(data))
 // .catch((err)=> console.log(err))
 
-Promise.any([
-    Promise.reject("task 1 complete"),
-    Promise.reject("task 2 incomplete")
-])
-.then((data)=> console.log(data))
-.catch((err)=> console.log(err))
+// Promise.any([
+//     Promise.reject("task 1 complete"),
+//     Promise.reject("task 2 incomplete")
+// ])
+// .then((data)=> console.log(data))
+// .catch((err)=> console.log(err))
+
+
+
+// console.log(2+'2')
+
+
+// function* simpleGen() {
+//     yield 1;
+//     yield 2;
+//     yield 3;
+// }
+
+// const genObject = simpleGen();
+// console.log(genObject.next())
+// console.log(genObject.next())
+// console.log(genObject.next())
+// console.log(genObject.next())
