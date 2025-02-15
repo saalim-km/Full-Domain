@@ -319,19 +319,21 @@ import { executionAsyncResource } from "async_hooks";
 
 
 
-function reverseArr(arr , start=0,end=arr.length-1) {
-    if(start > end) {
-        return arr;
-    }
+// function reverseArr(arr , start=0,end=arr.length-1) {
+//     if(start > end) {
+//         return arr;
+//     }
 
-    [arr[start] ,  arr[end]] = [arr[end] , arr[start]];
+//     [arr[start] ,  arr[end]] = [arr[end] , arr[start]];
 
-    return reverseArr(arr,start+1 , end-1)
-}
-console.log(reverseArr([1,2,3,4,5]))
+//     return reverseArr(arr,start+1 , end-1)
+// }
+// console.log(reverseArr([1,2,3,4,5]))
 
 
-function reverseString(str) {
+// function reverseString(str) {
 
-    return str[0] + 
-}
+//     if(str.length <= 1) return str;
+//     return str[str.length-1] + reverseString(str.slice(0,-1))
+// }
+// console.log(reverseString("he"))
