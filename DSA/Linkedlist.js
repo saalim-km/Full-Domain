@@ -330,3 +330,8 @@ function reverseArr(arr , start=0,end=arr.length-1) {
 }
 console.log(reverseArr([1,2,3,4,5]))
 
+
+function reverseString(str) {
+
+    return str[0] + 
+}
