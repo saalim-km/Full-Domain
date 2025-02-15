@@ -262,58 +262,71 @@ import { executionAsyncResource } from "async_hooks";
 // console.log(y)
 // console.log(z)
 
-function printAll(arr,index=0) {
-    if(index == arr.length) return;
+// function printAll(arr,index=0) {
+//     if(index == arr.length) return;
 
-    console.log(arr[index])
+//     console.log(arr[index])
 
-    return printAll(arr,index+1);
-}
-console.log(printAll([1,2,3,4]))
-
-
-function printArrReverse(arr,index=arr.length-1) {
-    if(index < 0) return;
-
-    console.log(arr[index]);
-
-    return printArrReverse(arr,index-1);
-}
-
-printArrReverse([1,2,3,4,5])
+//     return printAll(arr,index+1);
+// }
+// console.log(printAll([1,2,3,4]))
 
 
-function sumOfArr(arr,index=0,result=0) {
-    if(index === arr.length) return result;
+// function printArrReverse(arr,index=arr.length-1) {
+//     if(index < 0) return;
 
-    result += arr[index];
+//     console.log(arr[index]);
 
-    return sumOfArr(arr,index+1,result)
-}
-console.log(sumOfArr([1,2,3,4,5]))
+//     return printArrReverse(arr,index-1);
+// }
+
+// printArrReverse([1,2,3,4,5])
 
 
-function maxElem(arr,max=-Infinity,index=0) {
-    if(arr.length === index) return max;
+// function sumOfArr(arr,index=0,result=0) {
+//     if(index === arr.length) return result;
 
-    if(arr[index] > max) {
-        max = arr[index];
+//     result += arr[index];
+
+//     return sumOfArr(arr,index+1,result)
+// }
+// console.log(sumOfArr([1,2,3,4,5]))
+
+
+// function maxElem(arr,max=-Infinity,index=0) {
+//     if(arr.length === index) return max;
+
+//     if(arr[index] > max) {
+//         max = arr[index];
+//     }
+
+//     return maxElem(arr,max,index+1);
+// }
+// console.log(maxElem([1,20,43,24]))
+
+
+// function isSorted(arr,i=0,j=i+1) {
+//     if(arr.length == j) return true;
+
+//     if(arr[j] < arr[i]) {
+//         return false;
+//     }
+
+//     return isSorted(arr,i+1)
+// }
+// console.log(isSorted([1,3,2,4,5]))
+
+
+
+
+function reverseArr(arr , start=0,end=arr.length-1) {
+    if(start > end) {
+        return arr;
     }
 
-    return maxElem(arr,max,index+1);
+    [arr[start] ,  arr[end]] = [arr[end] , arr[start]];
+
+    return reverseArr(arr,start+1 , end-1)
 }
-console.log(maxElem([1,20,43,24]))
-
-
-function isSorted(arr,i=0,j=i+1) {
-    if(arr.length == j) return true;
-
-    if(arr[j] < arr[i]) {
-        return false;
-    }
-
-    return isSorted(arr,i+1)
-}
-console.log(isSorted([1,3,2,4,5]))
-
+console.log(reverseArr([1,2,3,4,5]))
 
