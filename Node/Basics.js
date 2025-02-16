@@ -1,29 +1,48 @@
-const express = require("express")
+const fs = require("fs");
+const http = require("http")
+const express = require("express");
+const { execPath } = require("process");
 
-const app = express();
+const writableStream = fs.createWriteStream("./sample.md",{flags : "a"});
+const readableStream = fs.createReadStream("./text.md");
 
-app.use((express.urlencoded({extended : true})))
+// fs.writeFile("./sample.md","hello world",(err)=> {
+//     if(err) throw err;
 
-app.get("/",(req,res)=> {
-    res.send("welcome")
-})
+//     console.log("file created")
+// })
 
-app.get("/user",(req,res)=> {
-    res.send(
-        `
-    <form action="/value" method="post">
+// fs.unlink("./text.md",()=> console.log("file deleted"))
 
-    <input name = "data" type = "text"/>
-    <button type="submit">submit</button>
-    </form>
-    `
-    )
-})
+// fs.readFile("./text.md","utf8",(err,data)=> {
+//     console.log(data)
+// })
 
-app.post("/value",(req,res)=> {
-    console.log(req.body);
-})
+// writableStream.write('nigga, ');
+// writableStream.write('world!\n');
+// writableStream.write('world!\n');
+// writableStream.end(()=> console.log("completed"))
 
-app.listen(3000,()=> {
-    console.log("started")
+// const currentDate = new Date().toISOString();
+// fs.appendFile("./sample.md",currentDate,(err) => {
+//     console.log("date added")
+// })
+
+// fs.stat("./sample.md",(err,stats)=> {
+//     console.log(stats.)
+// })
+
+// readableStream.pipe(writableStream)
+
+
+// const server = http.createServer();
+
+// server.listen(3000,()=> {
+//     console.log("listening")
+// })
+
+const app = express()
+
+app.listen(3000,()=>{
+    console.log("3000 port listening")
 })

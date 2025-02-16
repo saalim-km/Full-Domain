@@ -1,4 +1,5 @@
-const fs = require("fs");
+// const fs = require("fs");
+const http = require("http");
 // console.log("before writing the file")
 
 // fs.writeFileSync("./text.md","ronaldo",(err)=> {
@@ -40,8 +41,9 @@ const fs = require("fs");
 //     console.log("file deleted 2")
 // })
 // console.log("before the operaation")
-fs.rmdir("./sample",(err)=> {
-    if(err) throw err;
+// fs.rmdir("./sample",(err)=> {
+//     if(err) throw err;
 
-    console.log("removed file")
-})
+//     console.log("removed file")
+// })
+

@@ -212,6 +212,7 @@ import { executionAsyncResource } from "async_hooks";
 //             curr = curr.next;
 //         }
 //     }
+
 //     clear() {
 //         this.head = null;
 //         this.length = 0;
